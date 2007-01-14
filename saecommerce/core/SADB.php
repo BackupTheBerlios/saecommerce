@@ -1,5 +1,7 @@
 <?php
 //SADB based on PEAR::DB
+//$Id
+
 final class SADB extends DB {
 	private $instances;
 	public static function &singleton($dsn = DSN){
