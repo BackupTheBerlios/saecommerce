@@ -12,27 +12,27 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: function.saurl.php,v 1.1 2007/01/11 13:13:01 trinculescu Exp $
+$Id: function.saurl.php,v 1.2 2007/01/14 13:55:40 trinculescu Exp $
 */
 
 /*! \brief Smarty plugin for creating valid SA URLs within the template
- * 
+ *
  */
 
 function smarty_function_saurl($params, &$smarty) {
 	$pageName = $params['page'];
 	$port = ($params['port']) ? $params['port'] : 80;
 	$secure = ($params['secure']) ? $params['secure'] : false;
-	
+
 	$events = $params['events'];
-	if ($events) {	
+	if ($events) {
 		$app = $smarty->get_template_vars('app');
 		$params[$app->getGPEventsName()] = $events;
 	}
-	
+
 	unset($params['port']);
-	unset($params['secure']);	
+	unset($params['secure']);
 	unset($params['page']);
 	unset($params['events']);
-	return SAUrl::url($pageName, $params, $port, $secure);
+	return SAUrl::Url($pageName, $params, $port, $secure);
 }
