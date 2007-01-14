@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: DemoPage.php,v 1.1 2007/01/11 13:13:02 trinculescu Exp $
+$Id: DemoPage.php,v 1.2 2007/01/14 13:08:00 trinculescu Exp $
 */
 
 class DemoPage extends SAPage {
@@ -20,6 +20,7 @@ class DemoPage extends SAPage {
 		parent::__construct($app, $name);
 		$this->setContents('title', ucwords(str_replace('/', ' &raquo; ', $this->name)));
 		$this->pageName = $this->getName();
-		$this->className = get_class($this);		
+		$this->className = get_class($this);
+		$db = SADB::singleton();
 	}
 }

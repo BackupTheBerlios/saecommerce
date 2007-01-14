@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: DemoApplication.php,v 1.1 2007/01/11 13:13:02 trinculescu Exp $
+$Id: DemoApplication.php,v 1.2 2007/01/14 13:08:00 trinculescu Exp $
 */
 
 require_once(SA_WEBAPP_DIR . 'DemoPage.php');
@@ -22,4 +22,6 @@ class DemoApplication extends SApplication {
 		$this->home = dirname(__FILE__);
 		parent::__construct();
 	}
+
+	function __destruct() {}
 }
