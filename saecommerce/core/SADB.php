@@ -1,6 +1,6 @@
 <?php
 //SADB based on PEAR::DB
-//$Id
+//$Id: SADB.php,v 1.3 2007/01/14 10:35:09 trinculescu Exp $
 
 final class SADB extends DB {
 	private $instances;
