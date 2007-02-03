@@ -12,14 +12,8 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: default.php,v 1.1 2007/01/11 13:13:02 trinculescu Exp $
+$Id: default.php,v 1.2 2007/02/03 16:26:53 trinculescu Exp $
 */
 
-class Page_default extends DemoPage {
-	public function doInit() {
-		print "init<br>";
-	}
-	public function doUpdate() {
-		print "update<br>";
-	}
+class Page_default extends PHWPage {
 }

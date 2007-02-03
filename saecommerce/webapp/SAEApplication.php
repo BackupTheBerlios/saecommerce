@@ -12,12 +12,12 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: DemoApplication.php,v 1.2 2007/01/14 13:08:00 trinculescu Exp $
+$Id: SAEApplication.php,v 1.1 2007/02/03 16:26:53 trinculescu Exp $
 */
 
-require_once(SA_WEBAPP_DIR . 'DemoPage.php');
+require_once(SAE_WEBAPP_DIR . 'PHWPage.php');
 
-class DemoApplication extends SApplication {
+class SAEApplication extends SApplication {
 	function __construct() {
 		$this->home = dirname(__FILE__);
 		parent::__construct();
