@@ -12,13 +12,13 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SAUrl.php,v 1.2 2007/01/14 13:55:40 trinculescu Exp $
+$Id: SAUrl.php,v 1.3 2007/02/04 10:19:59 trinculescu Exp $
 */
 
 /**
  * If this is set to false, the SID will be appended to the URL if the client does not accept cookies
  */
-define('SA_SESSION_FORCE_COOKIES', true);
+define('SAE_SESSION_FORCE_COOKIES', true);
 
 /*! \brief Class for creating SA valid URLs
  *
@@ -69,7 +69,7 @@ class SAUrl {
 				$url .= "/$key/$value";
 			}
 		}
-		if (!SA_SESSION_FORCE_COOKIES) {
+		if (!SAE_SESSION_FORCE_COOKIES) {
 			$url = self::appendSid($url);
 			if (SID) $params[SID] = SID;
 		}
@@ -93,7 +93,7 @@ class SAUrl {
 
 	private function appendCheckValue($url) {
 		ereg(self::$app->getScriptPath() . '(.*)', $url, $matches);
-		$url .= '/chk/' . md5(SA_SECRET_KEY . $matches[1]);
+		$url .= '/chk/' . md5(SAE_SECRET_KEY . $matches[1]);
 		return $url;
 	}
 

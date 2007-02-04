@@ -12,12 +12,12 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: index.php,v 1.1 2007/01/11 13:13:01 trinculescu Exp $
+$Id: index.php,v 1.2 2007/02/04 10:19:59 trinculescu Exp $
 */
 
 require_once('startup.php');
 
 SADebug::acceptClient('192.168.1.21');
-$app = & new DemoApplication();
+$app = & new SAEApplication();
 $app->run();
 ?>

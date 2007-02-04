@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SALog.php,v 1.1 2007/01/11 13:13:01 trinculescu Exp $
+$Id: SALog.php,v 1.2 2007/02/04 10:19:59 trinculescu Exp $
 */
 
 
@@ -21,7 +21,7 @@ define('SA_LOG_WARNING', 1);
 define('SA_LOG_ERROR', 1);
 
 /*! \brief Class used for logging messages to a file
- * 
+ *
  */
 
 class SALog {
@@ -36,28 +36,28 @@ class SALog {
 	 * it will receive a default name
 	 * @param string $name the name of the file
 	 */
-	
+
 	public static function open($name = null) {
 		if (is_null($name)) {
 			$name = 'sa_' . date('Y-m-d') . '.log';
 		}
-		self::$fp = @fopen(SA_LOGS_DIR . $name, 'a');
+		self::$fp = @fopen(SAE_LOGS_DIR . $name, 'a');
 	}
-	
+
 	/**
 	 * Logs the specified message to the file
 	 * @param string $message the log message
 	 * @param int $type the type of the message; can be SA_LOG_NOTICE, SA_LOG_WARNING or SA_LOG_ERROR
 	 */
-	
+
 	public static function log($message, $type = 0) {
 		@fwrite(self::$fp, self::$types[$type] . ': ' . date('Y-m-d H:i:s') . ": $message\n");
 	}
-	
+
 	/**
 	 * Closes the logger
 	 */
-	
+
 	public static function close() {
 		@fclose(self::$fp);
 	}

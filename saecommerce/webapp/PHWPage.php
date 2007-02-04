@@ -1,5 +1,5 @@
 <?php
-/* $Id: PHWPage.php,v 1.1 2007/02/03 16:26:53 trinculescu Exp $ */
+/* $Id: PHWPage.php,v 1.2 2007/02/04 10:19:59 trinculescu Exp $ */
 
 class PHWPage extends PHTMLContainer implements SAIPage {
 	protected $app;
@@ -23,7 +23,23 @@ class PHWPage extends PHTMLContainer implements SAIPage {
 		}
 	}
 
+	public function getContents() {}
+
 	public function fetch() {
+		ob_start();
+		require("webapp/Layouts/default.php");
+		$contents = ob_get_contents();
+		ob_end_clean();
+		$this->dom->loadHTML($contents);
+
+		$contentNode = & $this->dom->getElementsByTagName('div')->item(0);
+		if ($contentNode) {
+			$t = $this->createTable(3, 3);
+			$cell = $t->getCell(0, 0);
+			$cell->appendChild($this->createElement('h1', 'Hello World'));
+			$contentNode->appendChild($t);
+		}
+
 		return "$this";
 	}
 

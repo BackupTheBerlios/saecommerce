@@ -1,4 +1,4 @@
-/* CSS Document */		
+/* CSS Document */
 
 	body{
 		margin: 0px;
@@ -10,23 +10,23 @@
 	td.search {
 		font-size: .70em;
 	}
-	
+
 	td.login {
 		font-family: Tahoma;
 		font-weight: normal;
 		font-size: .70em;
 	}
-	
+
 	td.box {
 		font-family: Tahoma;
 		font-weight: normal;
 		font-size: .70em;
 	}
 
-	table.mainlinetable{	
+	table.mainlinetable{
 	height: 28px;
 	}
-	
+
 	td.tdbutton{
 	background-color:#F2ECDC;
 	border: 1px solid #666666;
@@ -34,31 +34,31 @@
 	text-align:center;
 	padding-left:3px;
 	}
-	
+
 	table.mainline{
 	background-color:#FAB706;
 	border-bottom:1px solid #666666;
 	border-top:1px solid #666666;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	height: 28px;
 	width:100%;
 	}
-	
+
 	table.mainlinebottom{
 	background-color:#FAB706;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 10px; 
+	font-size: 10px;
 	height: 28px;
 	width:100%;
 	}
-	
+
 	table.main{
 	background-color:#F2ECDC;
 	}
-	
+
 	table.mainmiddle{
 	background-color:#F2ECDC;
 	padding-left:5px;
@@ -71,112 +71,112 @@
 	.boxText{
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	}
-	
+
 	.boxTextBold{
 	font-family: Tahoma;
 	font-weight: bold;
-	font-size: 11px; 
+	font-size: 11px;
 	}
-	
+
 	.identText{
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 10px; 
+	font-size: 10px;
 	}
-	
+
 	td.tdtableloginend{
 	background-color:#F2ECDC;
 	border: 1px solid #666666;
 	vertical-align:middle;
-	font-size: 7px; 
+	font-size: 7px;
 	}
-	
-	.linkmain:link { 
+
+	.linkmain:link {
 	color :#000000;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	text-align: center;
 	text-decoration:none;
 	}
-	
-	.linkmain:visited { 
+
+	.linkmain:visited {
 	color :#000000;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	text-align: center;
 	text-decoration:none;
 	}
-	
+
 	.linkmain:hover {
 	color :#666666;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	text-align: center;
 	text-decoration:none;
 	}
-	.linksubmain:link { 
+	.linksubmain:link {
 	color :#666666;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 10px; 
+	font-size: 10px;
 	text-align: center;
 	text-decoration:none;
 	}
-	
-	.linksubmain:visited { 
+
+	.linksubmain:visited {
 	color :#666666;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 10px; 
+	font-size: 10px;
 	text-align: center;
 	text-decoration:none;
 	}
-	
+
 	.linksubmain:hover {
 	color :#000000;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 10px; 
+	font-size: 10px;
 	text-align: center;
 	text-decoration:underline;
 	}
-	
-	.linkbottom:link { 
+
+	.linkbottom:link {
 	color :#000000;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	text-align: center;
 	text-decoration:none;
 	}
-	
-	.linkbottom:visited { 
+
+	.linkbottom:visited {
 	color :#000000;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	text-align: center;
 	text-decoration:none;
 	}
-	
+
 	.linkbottom:hover {
 	color:#666666;
 	font-family: Tahoma;
 	font-weight: normal;
-	font-size: 11px; 
+	font-size: 11px;
 	text-align: center;
 	text-decoration:none;
 	}
-	
+
 	table.all{
 	border: 1px solid #666666;
 	}
-	
+
 	table.headingCateg{
 	border: 1px solid #666666;
 	background-color:#EFD07E;
@@ -267,7 +267,7 @@
 	font-weight: normal;
 	font-size: 11px;
 	}
-	
+
 	td.tdShopping{
 	border: 1px solid #666666;
 	background-color:#F2ECDC;
@@ -306,13 +306,13 @@
 	}
 	td.tdtableShopping{
 	padding-top:5px;
-	vertical-align:top;	
+	vertical-align:top;
 	}
 	hr.line{
 	color:F2ECDC;
 	width:100%;
 	}
-	
+
 	td.tdbannerrepeat{
 	background-image:url(images/banner_repeat.gif);
 	background-repeat:repeat-x;
@@ -322,7 +322,7 @@
 	vertical-align:middle;
 	padding-left:10px;
 	}
-	
+
 	img.productimagelink{
 	border:0;
 	}

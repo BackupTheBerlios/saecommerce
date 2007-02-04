@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body leftmargin="0" topmargin="0" bottommargin="0">
-		<table cellpadding="0" cellspacing="0" width="790" align="center" width="100%" height="100%" style="border: 1px solid black; border-collapse: collapse">
+		<table cellpadding="0" cellspacing="0" width="790" align="center" height="100%" style="border: 1px solid black; border-collapse: collapse">
 			<tr><td>
 				<table width="100%" height="100%" bgcolor="white" border="0" cellpadding="0" cellspacing="0">
 					<tr>
@@ -92,7 +92,7 @@
 								<tr>
 									<td width="150">
 										<!-- begin categories -->
-										<table width="150" border="0">
+										<table width="150" border="0" cellpadding="1" cellspacing="0">
 											<tr>
 												<td>
 													<table bgcolor="#EFD07E" width="100%" border="1" style="border: 1px solid gray;border-collapse:collapse">
@@ -127,7 +127,7 @@
 										<!-- end categories -->
 
 										<!-- begin whats' new -->
-										<table width="150" border="0">
+										<table width="150" border="0" cellpadding="1" cellspacing="0">
 											<tr>
 												<td>
 													<table bgcolor="#EFD07E" width="100%" border="1" style="border: 1px solid gray;border-collapse:collapse">
@@ -152,7 +152,7 @@
 										<!-- end whats' new -->
 
 										<!-- begin special -->
-										<table width="150" border="0">
+										<table width="150" border="0" cellpadding="1" cellspacing="0">
 											<tr>
 												<td>
 													<table bgcolor="#EFD07E" width="100%" border="1" style="border: 1px solid gray;border-collapse:collapse">
@@ -177,7 +177,7 @@
 										<!-- end special -->
 									</td>
 									<td valign="top" width="490">
-										<?= $this->getContents(CONTENT_FOR_LAYOUT) ?>
+										<div id="content"><?= $this->getContents(CONTENT_FOR_LAYOUT) ?></div>
 										<table>
 											<tr>
 												<td>
@@ -265,7 +265,7 @@
 									<td valign="top">
 
 										<!-- begin shopping cart -->
-										<table width="150" border="0">
+										<table width="150" border="0" cellpadding="1" cellspacing="0">
 											<tr>
 												<td>
 													<table bgcolor="#EFD07E" width="100%" border="1" style="border: 1px solid gray;border-collapse:collapse">
@@ -293,7 +293,7 @@
 										<!-- end shopping cart -->
 
 										<!-- begin best sellers -->
-										<table width="150" border="0">
+										<table width="150" border="0" cellpadding="1" cellspacing="0">
 											<tr>
 												<td>
 													<table bgcolor="#EFD07E" width="100%" border="1" style="border: 1px solid gray;border-collapse:collapse">
@@ -324,7 +324,7 @@
 										<!-- end best sellers -->
 
 										<!-- begin currencies -->
-										<table width="150" border="0">
+										<table width="150" border="0" cellpadding="1" cellspacing="0">
 											<tr>
 												<td>
 													<table bgcolor="#EFD07E" width="100%" border="1" style="border: 1px solid gray;border-collapse:collapse">
@@ -357,7 +357,7 @@
 										<!-- end currencies -->
 
 										<!-- begin information -->
-										<table width="150" border="0">
+										<table width="150" border="0" cellpadding="1" cellspacing="0">
 											<tr>
 												<td>
 													<table bgcolor="#EFD07E" width="100%" border="1" style="border: 1px solid gray;border-collapse:collapse">
