@@ -412,8 +412,8 @@
 					</tr>
 					<tr>
 						<td valign="bottom" height="10">
-							<table width="100%" class="mainlinebottom" cellpadding="0" cellspacing="0">
-								<tr><td align="right">&copy; copyright&nbsp;2006&nbsp; <a href="mailto:andi.trinculescu@gmail.com">skywebro</a>&nbsp;</td></tr>
+							<table width="100%" class="mainlinebottom" cellpadding="2" cellspacing="0">
+								<tr><td align="left">&copy; copyleft&nbsp;2006&nbsp; skywebro</td></tr>
 							</table>
 						</td>
 					</tr>
