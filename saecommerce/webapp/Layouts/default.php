@@ -279,7 +279,7 @@
 												<td>
 													<table width="100%" bgcolor="#DDD7C9" style="border: 1px solid gray;border-collapse:collapse">
 														<tr>
-															<td align="center">
+															<td>
 																<table width="100%" cellspacing="0" cellpadding="0" class="Category_link" >
 																	<tr>
 																		<td class="box">0 items</td>
@@ -307,7 +307,7 @@
 												<td>
 													<table width="100%" bgcolor="#DDD7C9" style="border: 1px solid gray;border-collapse:collapse">
 														<tr>
-															<td align="center">
+															<td>
 																<table width="100%" cellspacing="0" cellpadding="0" class="Category_link" >
 																	<tr>
 																		<td>
@@ -338,7 +338,7 @@
 												<td>
 													<table width="100%" bgcolor="#DDD7C9" style="border: 1px solid gray;border-collapse:collapse">
 														<tr>
-															<td align="center">
+															<td>
 																<table width="100%" cellspacing="0" cellpadding="0" class="Category_link" >
 																	<tr>
 																		<td class="box">
@@ -371,7 +371,7 @@
 												<td>
 													<table width="100%" bgcolor="#DDD7C9" style="border: 1px solid gray;border-collapse:collapse">
 														<tr>
-															<td align="center">
+															<td>
 																<table width="100%" cellspacing="0" cellpadding="0" class="Category_link" >
 																	<tr>
 																		<td>
