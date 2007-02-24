@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SAPageHandler.php,v 1.1 2007/01/11 13:13:01 trinculescu Exp $
+$Id: SAPageHandler.php,v 1.2 2007/02/24 13:16:03 trinculescu Exp $
 */
 
 /*! \brief Class for handling the pages
@@ -52,8 +52,12 @@ final class SAPageHandler {
 		if (is_null($page)) self::$app->resign("Could not create the page {$name}");
 		self::$app->setCurrentPage($page);
 		try {
+			$page->init();
 			$page->runEvents();
+			$page->beforeDisplay();			
 			$page->display();
+			$page->afterDisplay();			
+			
 		} catch (Exception $e) {
 			SADebug::trace($e->getMessage(), __FILE__, __LINE__, __METHOD__);
 		}

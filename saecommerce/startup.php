@@ -12,8 +12,13 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: startup.php,v 1.3 2007/02/04 10:19:59 trinculescu Exp $
+$Id: startup.php,v 1.4 2007/02/24 13:16:03 trinculescu Exp $
 */
+
+//add PEAR to include path
+ob_start();
+
+set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/share/php');
 
 define('SAE_CORE_DIR', 'core/');
 define('SAE_PHTMLWIDGETS', '/home/andi/public_html/phtmlwidgets/');
@@ -39,10 +44,17 @@ require_once(SAE_CORE_DIR	.	'SARequest.php');
 require_once(SAE_CORE_DIR	.	'SALog.php');
 require_once(SAE_CORE_DIR	.	'SApplication.php');
 
-//includes for database
-require_once('DB.php');
-require_once(SAE_CORE_DIR	.	'SADB.php');
+require_once('PEAR.php');
+require_once('DB/DataObject.php');
 
+$options = &PEAR::getStaticProperty('DB_DataObject','options');
+$options = array(
+    'database'         => 'mysql://root:1425@localhost/saecommerce',
+    'schema_location'  => '/home/andi/public_html/saecommerce/DataObjects',
+    'class_location'   => '/home/andi/public_html/saecommerce/DataObjects',
+    'class_prefix'     => 'DataObjects_',
+);
+//DB_DataObject::debugLevel(5);
 //includes for webapp
 require_once(SAE_WEBAPP_DIR	.	'SAEApplication.php');
 

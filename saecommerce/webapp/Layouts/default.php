@@ -105,21 +105,17 @@
 											<tr>
 												<td>
 													<table width="100%" bgcolor="#DDD7C9" style="border: 1px solid gray;border-collapse:collapse">
+														<?php
+															$this->categories->find();
+															while ($this->categories->fetch()) :
+																$this->categories->getLinks();
+														?>
 														<tr>
 															<td>&nbsp;</td>
 															<td width="10"><img src="images/arrow.gif"></td>
-															<td class="box" style="border-bottom:1px solid grey">Hardware</td>
+															<td class="box" style="border-bottom:1px solid grey"><?= $this->categories->_categories_id->categories_name ?></td>
 														</tr>
-														<tr>
-															<td>&nbsp;</td>
-															<td><img src="images/arrow.gif"></td>
-															<td class="box" style="border-bottom:1px solid grey">Software</td>
-														</tr>
-														<tr>
-															<td>&nbsp;</td>
-															<td><img src="images/arrow.gif"></td>
-															<td class="box" style="border-bottom:1px solid grey">DVD</td>
-														</tr>
+														<?php endwhile; ?>
 													</table>
 												</td>
 											</tr>
@@ -177,7 +173,7 @@
 										<!-- end special -->
 									</td>
 									<td valign="top" width="490">
-										<div id="content"><?= $this->getContents(CONTENT_FOR_LAYOUT) ?></div>
+										<div id="content"></div>
 										<table>
 											<tr>
 												<td>
