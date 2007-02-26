@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: startup.php,v 1.4 2007/02/24 13:16:03 trinculescu Exp $
+$Id: startup.php,v 1.5 2007/02/26 19:01:47 trinculescu Exp $
 */
 
 //add PEAR to include path
@@ -57,4 +57,5 @@ $options = array(
 //DB_DataObject::debugLevel(5);
 //includes for webapp
 require_once(SAE_WEBAPP_DIR	.	'SAEApplication.php');
+require_once(SAE_LIB_DIR	.	'DBMenu.php');
 

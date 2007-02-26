@@ -1,10 +1,11 @@
 <?php
-/* $Id: PHWPage.php,v 1.3 2007/02/24 13:16:03 trinculescu Exp $ */
+/* $Id: PHWPage.php,v 1.4 2007/02/26 19:01:47 trinculescu Exp $ */
 
 class PHWPage extends PHTMLContainer implements SAIPage {
 	protected $app;
 	protected $name;
 	protected $hasLayout = true;
+	protected $layout = 'webapp/Layouts/default.php';
 	protected $regions = array();
 
 	public function __construct(SApplication &$app, $name, $hasLayout = true) {
@@ -15,22 +16,24 @@ class PHWPage extends PHTMLContainer implements SAIPage {
 	}
 	
 	public function initLayout() {
-		ob_start();
-		require("webapp/Layouts/default.php");
-		$contents = ob_get_contents();
-		ob_end_clean();
-		$this->dom->loadHTML($contents);
+		if ($this->hasLayout) {
+			ob_start();
+			require($this->layout);
+			$contents = ob_get_contents();
+			ob_end_clean();
+			$this->dom->loadHTML($contents);
+			$td = $this->dom->getElementById('categories_menu');
+			print_r($td);
+		}
 	}
 
-	public function initCategories() {
-		$this->categories = DB_DataObject::factory('categories');
+	public function categoriesMenu() {
+		$this->categoryTree = new DBMenu();
 	}
 	
 	public function init() {
-		$this->initCategories();
-		if ($this->hasLayout) {
-			$this->initLayout();
-		}
+		$this->categoriesMenu();
+		$this->initLayout();
 	}
 
 	public function runEvents() {
@@ -60,7 +63,7 @@ class PHWPage extends PHTMLContainer implements SAIPage {
 			}
 		}
 
-		return "$this";
+		return $this->saveHTML();
 	}
 
 	public function beforeDisplay() {}
