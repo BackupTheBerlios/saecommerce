@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SAEApplication.php,v 1.1 2007/02/03 16:26:53 trinculescu Exp $
+$Id: SAEApplication.php,v 1.2 2007/02/28 10:03:16 trinculescu Exp $
 */
 
 require_once(SAE_WEBAPP_DIR . 'PHWPage.php');

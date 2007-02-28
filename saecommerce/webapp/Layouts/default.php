@@ -71,7 +71,7 @@
                       <table cellpadding="0" cellspacing="10"
                       class="mainlinetable">
                         <tr>
-                          <td class="tdbutton" align="center">
+                          <td class="tdbutton" align="center" id="top_menu">
                             <img src="images/arrow.gif" /><a
                             href=""
                             class="linkmain">&nbsp;Home&nbsp;&nbsp;</a>
@@ -136,7 +136,7 @@
                           <td align="left" class="login">
                             <input type="password" name="password"
                             class="coolinput" maxlength="40"
-                            size="15" value="" /> 
+                            size="15" value="" />
                           </td>
                           <td align="center" class="login">
                             <input type="image"

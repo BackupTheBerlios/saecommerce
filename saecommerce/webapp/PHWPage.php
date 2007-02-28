@@ -1,5 +1,5 @@
 <?php
-/* $Id: PHWPage.php,v 1.4 2007/02/26 19:01:47 trinculescu Exp $ */
+/* $Id: PHWPage.php,v 1.5 2007/02/28 10:03:16 trinculescu Exp $ */
 
 class PHWPage extends PHTMLContainer implements SAIPage {
 	protected $app;
@@ -48,21 +48,7 @@ class PHWPage extends PHTMLContainer implements SAIPage {
 		}
 	}
 	
-	public function setRegion($node, $contents) {		
-		$this->regions[md5(serialize($node))] = array('node' => $node, 'contents' => $contents);
-	}
-
-	public function & getRegion($node) {
-		return $this->regions[md5(serialize($node))];
-	}	
-
 	public function fetch() {
-		if (is_array($this->regions)) {
-			foreach($this->regions as $region) {
-				$region['node']->appendChild($region['contents']);
-			}
-		}
-
 		return $this->saveHTML();
 	}
 
