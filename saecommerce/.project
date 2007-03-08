@@ -3,6 +3,7 @@
 	<name>saecommerce</name>
 	<comment></comment>
 	<projects>
+		<project>phtmlwidgets</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

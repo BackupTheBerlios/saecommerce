@@ -2,9 +2,28 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+  	<base href="<?= SAUrl::baseHref() ?>" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>
     </title>
+    <script type="text/javascript" src="yui/yahoo-dom-event/yahoo-dom-event.js" ></script>
+    <script type="text/javascript" src="yui/dragdrop/dragdrop-min.js" ></script>
+    <script src="yui/dom/dom-min.js"></script>
+    <script>
+    	YAHOO.util.DDM.mode = YAHOO.util.DDM.INTERSECT;
+    	var ddProduct3 = new YAHOO.util.DDProxy("product3");
+    	var ddCart = new YAHOO.util.DDTarget("cart");
+
+		ddProduct3.onDragDrop = function(e, id) {
+			alert('droped');
+		}
+    	ddProduct3.onMouseUp = function(e) {
+    		var el = this.getEl();
+	    	el.style.top = 0;
+	    	el.style.left = 0;
+    	}
+    </script>
+
   </head>
   <body leftmargin="0" topmargin="0" bottommargin="0">
     <table cellpadding="0" cellspacing="0" width="790"
@@ -22,16 +41,16 @@
                   <tr>
                     <td width="100%" class="tdbannerrepeat">
                       <img src="images/logob.gif" align="bottom" />
-                      
+
                     </td>
                     <td align="right">
-                      <img src="images/banner.gif" /> 
+                      <img src="images/banner.gif" />
                     </td>
                     <td>
                       <table cellpadding="0" cellspacing="0">
                         <tr>
                           <td>
-                            <img src="images/bannertop4.gif" /> 
+                            <img src="images/bannertop4.gif" />
                           </td>
                         </tr>
                         <tr height="68px">
@@ -48,11 +67,11 @@
                                   <input type="text"
                                   name="email_address"
                                   class="coolinput" size="13"
-                                  value="" /> 
+                                  value="" />
                                 </td>
                                 <td width="100%">
                                   <input type="image"
-                                  src="images/buttonGo.gif" /> 
+                                  src="images/buttonGo.gif" />
                                 </td>
                               </tr>
                             </table>
@@ -75,30 +94,30 @@
                             <img src="images/arrow.gif" /><a
                             href=""
                             class="linkmain">&nbsp;Home&nbsp;&nbsp;</a>
-                            
+
                           </td>
                           <td class="tdbutton" align="center">
                             <img src="images/arrow.gif" /><a
                             href=""
                             class="linkmain">&nbsp;Login&nbsp;&nbsp;</a>
-                            
+
                           </td>
                           <td class="tdbutton">
                             <img src="images/arrow.gif" /><a
                             href="" class="linkmain">&nbsp;Shopping
-                            Cart&nbsp;&nbsp;</a> 
+                            Cart&nbsp;&nbsp;</a>
                           </td>
                           <td class="tdbutton">
                             <img src="images/arrow.gif" /><a
                             href=""
                             class="linkmain">&nbsp;Checkout&nbsp;&nbsp;</a>
-                            
+
                           </td>
                           <td class="tdbutton">
                             <img src="images/arrow.gif" /><a
                             href=""
                             class="linkmain">&nbsp;Members&nbsp;&nbsp;</a>
-                            
+
                           </td>
                         </tr>
                       </table>
@@ -128,7 +147,7 @@
                           <td align="left" class="login">
                             <input type="text" name="email_address"
                             class="coolinput" maxlength="96"
-                            size="15" value="" /> 
+                            size="15" value="" />
                           </td>
                           <td align="left" class="login">
                             &nbsp;Password:
@@ -141,7 +160,7 @@
                           <td align="center" class="login">
                             <input type="image"
                             src="images/button.gif" alt="Sign In"
-                            title=" Sign In " /> 
+                            title=" Sign In " />
                           </td>
                         </tr>
                       </table>
@@ -182,7 +201,7 @@
                                   &nbsp;
                                 </td>
                                 <td width="10">
-                                  <img src="images/arrow.gif" /> 
+                                  <img src="images/arrow.gif" />
                                 </td>
                                 <td class="box"
                                 style="border-bottom:1px solid grey">
@@ -194,7 +213,7 @@
                                   &nbsp;
                                 </td>
                                 <td>
-                                  <img src="images/arrow.gif" /> 
+                                  <img src="images/arrow.gif" />
                                 </td>
                                 <td class="box"
                                 style="border-bottom:1px solid grey">
@@ -206,7 +225,7 @@
                                   &nbsp;
                                 </td>
                                 <td>
-                                  <img src="images/arrow.gif" /> 
+                                  <img src="images/arrow.gif" />
                                 </td>
                                 <td class="box"
                                 style="border-bottom:1px solid grey">
@@ -293,7 +312,7 @@
                       <!-- end special -->
                     </td>
                     <td valign="top" width="490">
-                      <div id="content"></div> 
+                      <div id="content"></div>
                       <table>
                         <tr>
                           <td>
@@ -340,13 +359,13 @@
                                     <tr align="center">
                                       <td width="50%">
                                         <table width="200"
-                                        class="NewProduct">
+                                        class="NewProduct" id="product3">
                                           <tr align="center">
                                             <td>
                                               <a href=""><img
                                               src="images/product3.gif"
                                                class="productimagelink" /></a>
-                                              
+
                                             </td>
                                             <td>
                                               <a href=""
@@ -354,7 +373,7 @@
 
                                                $35.99<br >
                                                <br >
-                                               
+
                                               <table>
                                                 <tr>
                                                   <td
@@ -363,8 +382,7 @@
                                                     src="images/arrow.gif" />
                                                     <a href=""
                                                     class="linkmain">
-                                                    &nbsp;Buy
-                                                    Now&nbsp;</a> 
+                                                    Buy now</a>
                                                   </td>
                                                 </tr>
                                               </table>
@@ -380,7 +398,7 @@
                                               <a href=""><img
                                               src="images/product4.gif"
                                                class="productimagelink" /></a>
-                                              
+
                                             </td>
                                             <td>
                                               <a href=""
@@ -388,7 +406,7 @@
 
                                                $35.99<br >
                                                <br >
-                                               
+
                                               <table>
                                                 <tr>
                                                   <td
@@ -397,8 +415,7 @@
                                                     src="images/arrow.gif" />
                                                     <a href=""
                                                     class="linkmain">
-                                                    &nbsp;Buy
-                                                    Now&nbsp;</a> 
+                                                    Buy now</a>
                                                   </td>
                                                 </tr>
                                               </table>
@@ -416,7 +433,7 @@
                                               <a href=""><img
                                               src="images/product5.gif"
                                                class="productimagelink" /></a>
-                                              
+
                                             </td>
                                             <td>
                                               <a href=""
@@ -424,7 +441,7 @@
 
                                                $35.99<br >
                                                <br >
-                                               
+
                                               <table>
                                                 <tr>
                                                   <td
@@ -433,8 +450,7 @@
                                                     src="images/arrow.gif" />
                                                     <a href=""
                                                     class="linkmain">
-                                                    &nbsp;Buy
-                                                    Now&nbsp;</a> 
+                                                    Buy now</a>
                                                   </td>
                                                 </tr>
                                               </table>
@@ -450,7 +466,7 @@
                                               <a href=""><img
                                               src="images/product6.gif"
                                                class="productimagelink" /></a>
-                                              
+
                                             </td>
                                             <td>
                                               <a href=""
@@ -458,7 +474,7 @@
 
                                                $35.99<br >
                                                <br >
-                                               
+
                                               <table>
                                                 <tr>
                                                   <td
@@ -467,8 +483,7 @@
                                                     src="images/arrow.gif" />
                                                     <a href=""
                                                     class="linkmain">
-                                                    &nbsp;Buy
-                                                    Now&nbsp;</a> 
+                                                    Buy now</a>
                                                   </td>
                                                 </tr>
                                               </table>
@@ -508,7 +523,7 @@
                         <tr>
                           <td>
                             <table width="100%" bgcolor="#DDD7C9"
-                            style="border: 1px solid gray;border-collapse:collapse">
+                            style="border: 1px solid gray;border-collapse:collapse" id="cart">
                               <tr>
                                 <td>
                                   <table width="100%"
@@ -561,7 +576,7 @@
                                          <a href=""
                                         class="linksubmain">02.
                                         blaaaaaaa</a><br >
-                                         
+
                                       </td>
                                     </tr>
                                   </table>
@@ -607,7 +622,7 @@
                                           <option>
                                             EUR
                                           </option>
-                                        </select> 
+                                        </select>
                                       </td>
                                     </tr>
                                   </table>
@@ -657,7 +672,7 @@
                                          <a href=""
                                         class="linksubmain">Contact
                                         us</a><br >
-                                         
+
                                       </td>
                                     </tr>
                                   </table>
@@ -682,20 +697,20 @@
                 style="border-top: 1px solid black; border-bottom: 1px solid black">
                   <tr>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Home</a> 
+                      <a href="" class="linkbottom">Home</a>
                     </td>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Contact us</a> 
+                      <a href="" class="linkbottom">Contact us</a>
                     </td>
                     <td width="20%" align="center">
                       <a href="" class="linkbottom">Shopping
-                      Cart</a> 
+                      Cart</a>
                     </td>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Checkout</a> 
+                      <a href="" class="linkbottom">Checkout</a>
                     </td>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Members</a> 
+                      <a href="" class="linkbottom">Members</a>
                     </td>
                   </tr>
                 </table>

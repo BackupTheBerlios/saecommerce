@@ -238,6 +238,7 @@
 	height:86px;
 	}
 	table.NewProduct{
+	cursor: move;
 	border: 1px solid #666666;
 	background-color:#DDD7C9;
 	font-family: Tahoma;
