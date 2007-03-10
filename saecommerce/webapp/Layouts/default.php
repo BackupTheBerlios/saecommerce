@@ -312,7 +312,8 @@
                       <!-- end special -->
                     </td>
                     <td valign="top" width="490">
-                      <div id="content"></div>
+                      <div id="content">
+                      <?= $this->getContents(CONTENT_FOR_LAYOUT) ?>
                       <table>
                         <tr>
                           <td>
@@ -501,6 +502,7 @@
                         </tr>
                       </table>
                       <!-- end new products -->
+                      </div>
                     </td>
                     <td valign="top">
                       <!-- begin shopping cart -->

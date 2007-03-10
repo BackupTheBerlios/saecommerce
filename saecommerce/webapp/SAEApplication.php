@@ -12,10 +12,10 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SAEApplication.php,v 1.2 2007/02/28 10:03:16 trinculescu Exp $
+$Id: SAEApplication.php,v 1.3 2007/03/10 09:09:46 trinculescu Exp $
 */
 
-require_once(SAE_WEBAPP_DIR . 'PHWPage.php');
+require_once(SAE_WEBAPP_DIR . 'SAEPage.php');
 
 class SAEApplication extends SApplication {
 	function __construct() {

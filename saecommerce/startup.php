@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: startup.php,v 1.5 2007/02/26 19:01:47 trinculescu Exp $
+$Id: startup.php,v 1.6 2007/03/10 09:09:46 trinculescu Exp $
 */
 
 //add PEAR to include path
@@ -21,7 +21,6 @@ ob_start();
 set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/share/php');
 
 define('SAE_CORE_DIR', 'core/');
-define('SAE_PHTMLWIDGETS', '/home/andi/public_html/phtmlwidgets/');
 define('SAE_LIB_DIR', 'lib/');
 define('SAE_SMARTY_DIR', SAE_LIB_DIR . 'Smarty-2.6.14/libs/');
 define('SAE_WEBAPP_DIR', 'webapp/');
@@ -33,7 +32,6 @@ define('DSN', 'mysql://root:1425@localhost/saecommerce');
 
 //includes for SA
 require_once(SAE_SMARTY_DIR	.	'Smarty.class.php');
-require_once(SAE_PHTMLWIDGETS . '/includes.php');
 require_once(SAE_CORE_DIR	.	'SADebug.php');
 require_once(SAE_CORE_DIR	.	'SAExceptions.php');
 require_once(SAE_CORE_DIR	.	'SAUrl.php');
