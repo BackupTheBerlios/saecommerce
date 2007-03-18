@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: startup.php,v 1.6 2007/03/10 09:09:46 trinculescu Exp $
+$Id: startup.php,v 1.7 2007/03/18 20:12:44 trinculescu Exp $
 */
 
 //add PEAR to include path
@@ -22,6 +22,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/share/php');
 
 define('SAE_CORE_DIR', 'core/');
 define('SAE_LIB_DIR', 'lib/');
+define('SAE_CLASSES_DIR', 'classes/');
 define('SAE_SMARTY_DIR', SAE_LIB_DIR . 'Smarty-2.6.14/libs/');
 define('SAE_WEBAPP_DIR', 'webapp/');
 define('SAE_LOGS_DIR', 'logs/');
@@ -44,6 +45,7 @@ require_once(SAE_CORE_DIR	.	'SApplication.php');
 
 require_once('PEAR.php');
 require_once('DB/DataObject.php');
+require_once('Tree/Tree.php');
 
 $options = &PEAR::getStaticProperty('DB_DataObject','options');
 $options = array(
@@ -55,5 +57,4 @@ $options = array(
 //DB_DataObject::debugLevel(5);
 //includes for webapp
 require_once(SAE_WEBAPP_DIR	.	'SAEApplication.php');
-require_once(SAE_LIB_DIR	.	'DBMenu.php');
 

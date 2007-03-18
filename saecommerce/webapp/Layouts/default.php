@@ -196,42 +196,9 @@
                           <td>
                             <table width="100%" bgcolor="#DDD7C9"
                             style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td>
-                                  &nbsp;
-                                </td>
-                                <td width="10">
-                                  <img src="images/arrow.gif" />
-                                </td>
-                                <td class="box"
-                                style="border-bottom:1px solid grey">
-                                  Hardware
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  &nbsp;
-                                </td>
-                                <td>
-                                  <img src="images/arrow.gif" />
-                                </td>
-                                <td class="box"
-                                style="border-bottom:1px solid grey">
-                                  Software
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  &nbsp;
-                                </td>
-                                <td>
-                                  <img src="images/arrow.gif" />
-                                </td>
-                                <td class="box"
-                                style="border-bottom:1px solid grey">
-                                  DVD
-                                </td>
-                              </tr>
+                            <?php
+                            	$this->buildCategories($this->tree->getFirstRoot());
+                           	?>
                             </table>
                           </td>
                         </tr>

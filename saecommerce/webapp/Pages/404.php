@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: 404.php,v 1.1 2007/01/11 13:13:02 trinculescu Exp $
+$Id: 404.php,v 1.2 2007/03/18 20:12:44 trinculescu Exp $
 */
 
-class Page_404 extends DemoPage {}
+class Page_404 extends SAEPage {}

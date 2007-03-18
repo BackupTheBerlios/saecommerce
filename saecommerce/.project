@@ -15,4 +15,11 @@
 	<natures>
 		<nature>net.sourceforge.phpeclipse.phpnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>pear</name>
+			<type>2</type>
+			<location>//Debian/andi/pear</location>
+		</link>
+	</linkedResources>
 </projectDescription>

@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SARequest.php,v 1.1 2007/01/11 13:13:01 trinculescu Exp $
+$Id: SARequest.php,v 1.2 2007/03/18 20:12:44 trinculescu Exp $
 */
 
 /*! \brief Class for handling the HTTP request
@@ -56,7 +56,7 @@ final class SARequest {
 		if ($matches[1]) {
 			$uri = $_SERVER['REQUEST_URI'];
 			ereg(self::$app->getScriptPath() . "(.*)/chk", $uri, $matches);
-			if (md5(SA_SECRET_KEY . $matches[1]) != $_REQUEST['chk']) {
+			if (md5(SAE_SECRET_KEY . $matches[1]) != $_REQUEST['chk']) {
 				throw new URLManipulationException('the client altered the request parameters');
 			}
 		}
@@ -93,7 +93,7 @@ final class SARequest {
 		$params = explode('/', $matches[1]);
 		$length = count($params);
 		for($i = 1; $i < $length - 1; $i += 2) {
-			$_REQUEST[$params[$i]] = $_GET[$params[$i]] = self::decodeParam($params[$i + 1]);
+			$_REQUEST[$params[$i]] = $_GET[$params[$i]] = self::decodeParam($params[$i + 1]);			
 		}
 	}
 	
