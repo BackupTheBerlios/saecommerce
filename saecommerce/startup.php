@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: startup.php,v 1.7 2007/03/18 20:12:44 trinculescu Exp $
+$Id: startup.php,v 1.8 2007/03/19 11:48:29 trinculescu Exp $
 */
 
 //add PEAR to include path
@@ -49,7 +49,7 @@ require_once('Tree/Tree.php');
 
 $options = &PEAR::getStaticProperty('DB_DataObject','options');
 $options = array(
-    'database'         => 'mysql://root:1425@localhost/saecommerce',
+    'database'         => DSN,
     'schema_location'  => '/home/andi/public_html/saecommerce/DataObjects',
     'class_location'   => '/home/andi/public_html/saecommerce/DataObjects',
     'class_prefix'     => 'DataObjects_',
