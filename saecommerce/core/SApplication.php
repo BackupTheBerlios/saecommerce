@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SApplication.php,v 1.2 2007/02/04 10:19:59 trinculescu Exp $
+$Id: SApplication.php,v 1.3 2007/03/20 09:13:48 trinculescu Exp $
 */
 
 /*! \brief This is the application controller.
@@ -72,8 +72,6 @@ abstract class SApplication {
 	 */
 
 	function __construct() {
-		ob_start();
-
 		$this->start_time = microtime();
 		$this->pageSearchDir = "{$this->home}/Pages";
 
@@ -133,7 +131,6 @@ abstract class SApplication {
 
 	public function redirect($url) {
 		header("Location: $url");
-		exit(0);
 	}
 
 	/**

@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: startup.php,v 1.8 2007/03/19 11:48:29 trinculescu Exp $
+$Id: startup.php,v 1.9 2007/03/20 09:13:48 trinculescu Exp $
 */
 
 //add PEAR to include path
@@ -46,6 +46,7 @@ require_once(SAE_CORE_DIR	.	'SApplication.php');
 require_once('PEAR.php');
 require_once('DB/DataObject.php');
 require_once('Tree/Tree.php');
+require_once ("HTML/QuickForm.php");
 
 $options = &PEAR::getStaticProperty('DB_DataObject','options');
 $options = array(

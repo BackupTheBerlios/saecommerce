@@ -205,356 +205,24 @@
                       </table>
                       <!-- end categories -->
                       <!-- begin whats' new -->
-                      <table width="150" border="0">
-                        <tr>
-                          <td>
-                            <table bgcolor="#EFD07E" width="100%"
-                            border="1"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box">
-                                  <img
-                                  src="images/arrow.gif" />&nbsp;Whats'
-                                  new
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <table width="100%" bgcolor="#DDD7C9"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box"
-                                style="border-bottom:1px solid grey"
-                                 align="center">
-                                  <img
-                                  src="images/product1.gif" /><br >
-
-                                   product1<br >
-                                   $ 39.-
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+						<?= $this->getContents('WHATS_NEW') ?>
                       <!-- end whats' new -->
                       <!-- begin special -->
-                      <table width="150" border="0">
-                        <tr>
-                          <td>
-                            <table bgcolor="#EFD07E" width="100%"
-                            border="1"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box">
-                                  <img
-                                  src="images/arrow.gif" />&nbsp;Special
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <table width="100%" bgcolor="#DDD7C9"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box"
-                                style="border-bottom:1px solid grey"
-                                 align="center">
-                                  <img
-                                  src="images/product2.gif" /><br >
-
-                                   product2<br >
-                                   $ 39.-
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+						<?= $this->getContents('SPECIAL') ?>
                       <!-- end special -->
                     </td>
                     <td valign="top" width="490">
                       <div id="content">
-                      <?= $this->getContents(CONTENT_FOR_LAYOUT) ?>
-                      <table>
-                        <tr>
-                          <td>
-                            <!-- begin new products -->
-                            <table width="100%" cellspacing="0"
-                            cellpadding="0" class="main">
-                              <tr>
-                                <td>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table width="100%"
-                                  cellspacing="0" cellpadding="0"
-                                  class="headingCateg">
-                                    <tr>
-                                      <td class="tdheadingCateg2">
-                                        <img
-                                        src="images/arrow.gif" /><img
-                                         src="images/arrow.gif" /><img
-                                         src="images/arrow.gif" />&nbsp;&nbsp;New
-                                        products&nbsp;
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table cellspacing="0"
-                                  cellpadding="0" height="1">
-                                    <tr>
-                                      <td>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table width="100%"
-                                  cellspacing="10" cellpadding="5"
-                                  class="NewProduct">
-                                    <tr align="center">
-                                      <td width="50%">
-                                        <table width="200"
-                                        class="NewProduct" id="product3">
-                                          <tr align="center">
-                                            <td>
-                                              <a href=""><img
-                                              src="images/product3.gif"
-                                               class="productimagelink" /></a>
-
-                                            </td>
-                                            <td>
-                                              <a href=""
-                                              class="linkmain">product3</a><br >
-
-                                               $35.99<br >
-                                               <br >
-
-                                              <table>
-                                                <tr>
-                                                  <td
-                                                  class="tdbutton">
-                                                    <img
-                                                    src="images/arrow.gif" />
-                                                    <a href=""
-                                                    class="linkmain">
-                                                    Buy now</a>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                      <td width="50%">
-                                        <table width="200"
-                                        class="NewProduct">
-                                          <tr align="center">
-                                            <td>
-                                              <a href=""><img
-                                              src="images/product4.gif"
-                                               class="productimagelink" /></a>
-
-                                            </td>
-                                            <td>
-                                              <a href=""
-                                              class="linkmain">product4</a><br >
-
-                                               $35.99<br >
-                                               <br >
-
-                                              <table>
-                                                <tr>
-                                                  <td
-                                                  class="tdbutton">
-                                                    <img
-                                                    src="images/arrow.gif" />
-                                                    <a href=""
-                                                    class="linkmain">
-                                                    Buy now</a>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                    <tr align="center">
-                                      <td width="50%">
-                                        <table width="200"
-                                        class="NewProduct">
-                                          <tr align="center">
-                                            <td>
-                                              <a href=""><img
-                                              src="images/product5.gif"
-                                               class="productimagelink" /></a>
-
-                                            </td>
-                                            <td>
-                                              <a href=""
-                                              class="linkmain">product5</a><br >
-
-                                               $35.99<br >
-                                               <br >
-
-                                              <table>
-                                                <tr>
-                                                  <td
-                                                  class="tdbutton">
-                                                    <img
-                                                    src="images/arrow.gif" />
-                                                    <a href=""
-                                                    class="linkmain">
-                                                    Buy now</a>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                      <td width="50%">
-                                        <table width="200"
-                                        class="NewProduct">
-                                          <tr align="center">
-                                            <td>
-                                              <a href=""><img
-                                              src="images/product6.gif"
-                                               class="productimagelink" /></a>
-
-                                            </td>
-                                            <td>
-                                              <a href=""
-                                              class="linkmain">product6</a><br >
-
-                                               $35.99<br >
-                                               <br >
-
-                                              <table>
-                                                <tr>
-                                                  <td
-                                                  class="tdbutton">
-                                                    <img
-                                                    src="images/arrow.gif" />
-                                                    <a href=""
-                                                    class="linkmain">
-                                                    Buy now</a>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              <!--</td>--><!--</tr>-->
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                      <!-- end new products -->
+						<?= $this->getContents(CONTENT_FOR_LAYOUT) ?>
+						<?= $this->getContents('MIDDLE_BOX') ?>
                       </div>
                     </td>
                     <td valign="top">
                       <!-- begin shopping cart -->
-                      <table width="150" border="0">
-                        <tr>
-                          <td>
-                            <table bgcolor="#EFD07E" width="100%"
-                            border="1"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box">
-                                  <img
-                                  src="images/arrow.gif" />&nbsp;Shopping
-                                  cart
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <table width="100%" bgcolor="#DDD7C9"
-                            style="border: 1px solid gray;border-collapse:collapse" id="cart">
-                              <tr>
-                                <td>
-                                  <table width="100%"
-                                  cellspacing="0" cellpadding="0"
-                                  class="Category_link">
-                                    <tr>
-                                      <td class="box">
-                                        0 items
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+						<?= $this->getContents('SHOPPING_CART') ?>
                       <!-- end shopping cart -->
                       <!-- begin best sellers -->
-                      <table width="150" border="0">
-                        <tr>
-                          <td>
-                            <table bgcolor="#EFD07E" width="100%"
-                            border="1"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box">
-                                  <img
-                                  src="images/arrow.gif" />&nbsp;Best
-                                  sellers
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <table width="100%" bgcolor="#DDD7C9"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td>
-                                  <table width="100%"
-                                  cellspacing="0" cellpadding="0"
-                                  class="Category_link">
-                                    <tr>
-                                      <td>
-                                        <a href=""
-                                        class="linksubmain">01.
-                                        blaaaaaaa</a><br >
-                                         <a href=""
-                                        class="linksubmain">02.
-                                        blaaaaaaa</a><br >
-
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+						<?= $this->getContents('BEST_SELLERS') ?>
                       <!-- end best sellers -->
                       <!-- begin currencies -->
                       <table width="150" border="0">
@@ -603,6 +271,9 @@
                       </table>
                       <!-- end currencies -->
                       <!-- begin information -->
+						<?= $this->getContents('INFORMATION') ?>
+                      <!-- end information -->
+                      <!-- begin languages -->
                       <table width="150" border="0">
                         <tr>
                           <td>
@@ -612,7 +283,7 @@
                               <tr>
                                 <td class="box">
                                   <img
-                                  src="images/arrow.gif" />&nbsp;Information
+                                  src="images/arrow.gif" />&nbsp;Languages
                                 </td>
                               </tr>
                             </table>
@@ -623,25 +294,15 @@
                             <table width="100%" bgcolor="#DDD7C9"
                             style="border: 1px solid gray;border-collapse:collapse">
                               <tr>
-                                <td>
+                                <td align="center">
                                   <table width="100%"
                                   cellspacing="0" cellpadding="0"
                                   class="Category_link">
                                     <tr>
-                                      <td>
-                                        <a href=""
-                                        class="linksubmain">Shipping
-                                        Returns</a><br >
-                                         <a href=""
-                                        class="linksubmain">Privacy
-                                        Notice</a><br >
-                                         <a href=""
-                                        class="linksubmain">Conditions
-                                        of use</a><br >
-                                         <a href=""
-                                        class="linksubmain">Contact
-                                        us</a><br >
-
+                                      <td class="box">
+                                      <form <?= $this->frmLanguages['attributes'] ?>>
+										<?= $this->frmLanguages['elements'][0]['html'] ?>
+                                      </form>
                                       </td>
                                     </tr>
                                   </table>
@@ -651,7 +312,7 @@
                           </td>
                         </tr>
                       </table>
-                      <!-- end information -->
+                      <!-- end languages -->
                     </td>
                   </tr>
                 </table>
