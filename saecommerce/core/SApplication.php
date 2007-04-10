@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SApplication.php,v 1.3 2007/03/20 09:13:48 trinculescu Exp $
+$Id: SApplication.php,v 1.4 2007/04/10 16:56:30 trinculescu Exp $
 */
 
 /*! \brief This is the application controller.
@@ -96,6 +96,8 @@ abstract class SApplication {
 		} catch (Exception $e) {
 			$this->resign($e->getMessage(), 1);
 		}
+		unset($_GET['chk']);
+		unset($_REQUEST['chk']);
 		SALog::log("application initialized successfully", SA_LOG_NOTICE);
 	}
 

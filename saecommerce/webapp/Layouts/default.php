@@ -40,7 +40,7 @@
                 cellspacing="0">
                   <tr>
                     <td width="100%" class="tdbannerrepeat">
-                      <img src="images/logob.gif" align="bottom" />
+                    	<a href="<?= SAUrl::baseHref() ?>"><img src="images/logob.gif" align="bottom" border="0" /></a>
 
                     </td>
                     <td align="right">
@@ -86,37 +86,25 @@
                 <table class="mainline" cellpadding="0"
                 cellspacing="0">
                   <tr>
+                  	<td align="left">&nbsp;BREADCRUMB</td>
                     <td align="right">
                       <table cellpadding="0" cellspacing="10"
                       class="mainlinetable">
                         <tr>
-                          <td class="tdbutton" align="center" id="top_menu">
-                            <img src="images/arrow.gif" /><a
-                            href=""
-                            class="linkmain">&nbsp;Home&nbsp;&nbsp;</a>
-
-                          </td>
                           <td class="tdbutton" align="center">
                             <img src="images/arrow.gif" /><a
-                            href=""
-                            class="linkmain">&nbsp;Login&nbsp;&nbsp;</a>
+                            href="<?= SAUrl::Url('account') ?>"
+                            class="linkmain">&nbsp;My Account&nbsp;&nbsp;</a>
 
                           </td>
                           <td class="tdbutton">
                             <img src="images/arrow.gif" /><a
-                            href="" class="linkmain">&nbsp;Shopping
-                            Cart&nbsp;&nbsp;</a>
+                            href="<?= SAUrl::Url('cart') ?>" class="linkmain">&nbsp;Cart Contents&nbsp;&nbsp;</a>
                           </td>
                           <td class="tdbutton">
                             <img src="images/arrow.gif" /><a
-                            href=""
+                            href="<?= SAUrl::Url('checkout') ?>"
                             class="linkmain">&nbsp;Checkout&nbsp;&nbsp;</a>
-
-                          </td>
-                          <td class="tdbutton">
-                            <img src="images/arrow.gif" /><a
-                            href=""
-                            class="linkmain">&nbsp;Members&nbsp;&nbsp;</a>
 
                           </td>
                         </tr>
@@ -128,54 +116,11 @@
               </td>
             </tr>
             <tr>
-              <td valign="top" height="1">
-                <!-- login -->
-                <table cellspacing="0" cellpadding="3" width="100%"
-                style="border-bottom:1px solid black; border-collapse: collapse">
-                  <!-- loginbox //-->
-                  <tr>
-                    <td align="left" class="boxText">
-                      <form name="login" method="post" action="">
-                      </form>
-                      <table width="400" cellspacing="0"
-                      cellpadding="0">
-                        <tr>
-                          <td align="left" nowrap="nowrap"
-                          class="login">
-                            &nbsp;&nbsp;E-Mail Address:
-                          </td>
-                          <td align="left" class="login">
-                            <input type="text" name="email_address"
-                            class="coolinput" maxlength="96"
-                            size="15" value="" />
-                          </td>
-                          <td align="left" class="login">
-                            &nbsp;Password:
-                          </td>
-                          <td align="left" class="login">
-                            <input type="password" name="password"
-                            class="coolinput" maxlength="40"
-                            size="15" value="" />
-                          </td>
-                          <td align="center" class="login">
-                            <input type="image"
-                            src="images/button.gif" alt="Sign In"
-                            title=" Sign In " />
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-                <!-- end login -->
-              </td>
-            </tr>
-            <tr>
               <td valign="top">
                 <!-- begin canvas -->
                 <table width="100%">
                   <tr>
-                    <td width="150">
+                    <td width="150" valign="top">
                       <!-- begin categories -->
                       <table width="150" border="0">
                         <tr>
@@ -197,7 +142,7 @@
                             <table width="100%" bgcolor="#DDD7C9"
                             style="border: 1px solid gray;border-collapse:collapse">
                             <?php
-                            	$this->buildCategories($this->tree->getFirstRoot());
+                            	$this->boxCategories($this->tree->getFirstRoot());
                            	?>
                             </table>
                           </td>
@@ -225,93 +170,13 @@
 						<?= $this->getContents('BEST_SELLERS') ?>
                       <!-- end best sellers -->
                       <!-- begin currencies -->
-                      <table width="150" border="0">
-                        <tr>
-                          <td>
-                            <table bgcolor="#EFD07E" width="100%"
-                            border="1"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box">
-                                  <img
-                                  src="images/arrow.gif" />&nbsp;Currencies
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <table width="100%" bgcolor="#DDD7C9"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td align="center">
-                                  <table width="100%"
-                                  cellspacing="0" cellpadding="0"
-                                  class="Category_link">
-                                    <tr>
-                                      <td class="box">
-                                        <select name="Curency"
-                                        class="coolcombo">
-                                          <option>
-                                            USD
-                                          </option>
-                                          <option>
-                                            EUR
-                                          </option>
-                                        </select>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+						<?= $this->getContents('CURRENCIES') ?>
                       <!-- end currencies -->
                       <!-- begin information -->
 						<?= $this->getContents('INFORMATION') ?>
                       <!-- end information -->
                       <!-- begin languages -->
-                      <table width="150" border="0">
-                        <tr>
-                          <td>
-                            <table bgcolor="#EFD07E" width="100%"
-                            border="1"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td class="box">
-                                  <img
-                                  src="images/arrow.gif" />&nbsp;Languages
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <table width="100%" bgcolor="#DDD7C9"
-                            style="border: 1px solid gray;border-collapse:collapse">
-                              <tr>
-                                <td align="center">
-                                  <table width="100%"
-                                  cellspacing="0" cellpadding="0"
-                                  class="Category_link">
-                                    <tr>
-                                      <td class="box">
-                                      <form <?= $this->frmLanguages['attributes'] ?>>
-										<?= $this->frmLanguages['elements'][0]['html'] ?>
-                                      </form>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+						<?= $this->getContents('LANGUAGES') ?>
                       <!-- end languages -->
                     </td>
                   </tr>
@@ -327,20 +192,20 @@
                 style="border-top: 1px solid black; border-bottom: 1px solid black">
                   <tr>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Home</a>
+                      <a href="<?= SAUrl::baseHref() ?>" class="linkbottom">Home</a>
                     </td>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Contact us</a>
+                      <a href="<?= SAUrl::Url('contact') ?>" class="linkbottom">Contact us</a>
                     </td>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Shopping
+                      <a href="<?= SAUrl::Url('cart') ?>" class="linkbottom">Shopping
                       Cart</a>
                     </td>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Checkout</a>
+                      <a href="<?= SAUrl::Url('checkout') ?>" class="linkbottom">Checkout</a>
                     </td>
                     <td width="20%" align="center">
-                      <a href="" class="linkbottom">Members</a>
+                      <a href="<?= SAUrl::Url('account') ?>" class="linkbottom">Members</a>
                     </td>
                   </tr>
                 </table>

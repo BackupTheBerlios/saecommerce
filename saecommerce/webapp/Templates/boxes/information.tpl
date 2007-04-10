@@ -24,17 +24,10 @@
           class="Category_link">
             <tr>
               <td>
-                <a href=""
-                class="linksubmain">Shipping
-                Returns</a><br >
-                 <a href=""
-                class="linksubmain">Privacy
-                Notice</a><br >
-                 <a href=""
-                class="linksubmain">Conditions
-                of use</a><br >
-                 <a href=""
-                class="linksubmain">Contact
+                <a href="{saurl page="shipping"}" class="linksubmain">Shipping Returns</a><br/>
+                 <a href="{saurl page="privacy"}" class="linksubmain">Privacy Notice</a><br >
+                 <a href="{saurl page="conditions"}" class="linksubmain">Conditions of use</a><br >
+                 <a href="{saurl page="contact"}" class="linksubmain">Contact
                 us</a><br >
 
               </td>

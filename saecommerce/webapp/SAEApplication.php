@@ -12,16 +12,15 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SAEApplication.php,v 1.3 2007/03/10 09:09:46 trinculescu Exp $
+$Id: SAEApplication.php,v 1.4 2007/04/10 16:56:30 trinculescu Exp $
 */
 
+require_once('Benchmark/Timer.php');
 require_once(SAE_WEBAPP_DIR . 'SAEPage.php');
 
 class SAEApplication extends SApplication {
-	function __construct() {
+	function __construct() {		
 		$this->home = dirname(__FILE__);
 		parent::__construct();
 	}
-
-	function __destruct() {}
 }

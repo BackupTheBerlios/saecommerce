@@ -25,13 +25,10 @@
           class="Category_link">
             <tr>
               <td>
-                <a href=""
-                class="linksubmain">01.
-                blaaaaaaa</a><br >
-                 <a href=""
-                class="linksubmain">02.
-                blaaaaaaa</a><br >
-
+              	{foreach name="best_sellers" from=$products item=product}
+                	<a href="" class="linksubmain">{$smarty.foreach.best_sellers.iteration}.&nbsp;{$product._products_id.products_name}</a>
+                	<br/>
+				{/foreach}
               </td>
             </tr>
           </table>

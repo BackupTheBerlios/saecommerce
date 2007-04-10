@@ -23,10 +23,10 @@
         style="border-bottom:1px solid grey"
          align="center">
           <img
-          src="images/product1.gif" /><br >
+          src="{sabasehref}images/{$product.products_image}" /><br >
 
-           product1<br >
-           $ 39.-
+           {$product._products_id.products_name}<br >
+           {sacurrency amount=$product.products_price}
         </td>
       </tr>
     </table>

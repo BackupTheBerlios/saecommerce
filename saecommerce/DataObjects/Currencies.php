@@ -26,4 +26,16 @@ class DataObjects_Currencies extends DB_DataObject
 
     /* the code above is auto generated do not remove the tag below */
     ###END_AUTOCODE
+    
+    public function format($amount) {
+    	$this->get($_COOKIE['currency']);	
+		$price = number_format(
+			$amount * $this->value,
+			$this->decimal_places,
+			$this->decimal_point,
+			$this->thousands_point
+		);	
+		$price = ($this->symbol_left) ? $this->symbol_left . '&nbsp;' . $price : (($this->symbol_right) ? $price . '&nbsp;' . $this->symbol_right : $price);
+		return $price;
+    }
 }

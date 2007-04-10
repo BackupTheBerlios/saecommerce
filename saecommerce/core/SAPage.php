@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SAPage.php,v 1.2 2007/02/04 10:19:59 trinculescu Exp $
+$Id: SAPage.php,v 1.3 2007/04/10 16:56:30 trinculescu Exp $
 */
 
 /**
@@ -285,7 +285,8 @@ abstract class SAPage extends Smarty implements SAIPage {
 
 	public function fetch() {
 		if ($this->template) $this->setContents(CONTENT_FOR_LAYOUT, parent::fetch($this->template));
-		return $this->render();
+		$content = $this->render();
+		return $content;
 	}
 
 	/**

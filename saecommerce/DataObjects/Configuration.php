@@ -27,4 +27,16 @@ class DataObjects_Configuration extends DB_DataObject
 
     /* the code above is auto generated do not remove the tag below */
     ###END_AUTOCODE
+    
+    public function &getDefaultLanguage() {
+		$this->query("SELECT * FROM {$this->__table} c LEFT JOIN languages l ON c.configuration_value = l.code WHERE c.configuration_key = 'DEFAULT_LANGUAGE'");
+		$this->fetch();
+		return $this;
+    }
+    
+    public function &getDefaultCurrency() {
+		$this->query("SELECT * FROM {$this->__table} c LEFT JOIN currencies cu ON c.configuration_value = cu.code WHERE c.configuration_key = 'DEFAULT_CURRENCY'");
+		$this->fetch();
+		return $this;
+    }
 }
