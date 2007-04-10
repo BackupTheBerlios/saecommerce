@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SAUrl.php,v 1.3 2007/02/04 10:19:59 trinculescu Exp $
+$Id: SAUrl.php,v 1.4 2007/04/10 17:19:25 trinculescu Exp $
 */
 
 /**
@@ -73,7 +73,7 @@ class SAUrl {
 			$url = self::appendSid($url);
 			if (SID) $params[SID] = SID;
 		}
-		if (count($params)) $url = self::appendCheckValue($url);
+		//if (count($params)) $url = self::appendCheckValue($url);
 		return $url;
 	}
 
