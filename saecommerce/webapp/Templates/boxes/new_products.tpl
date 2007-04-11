@@ -14,7 +14,7 @@
                 src="images/arrow.gif" /><img
                  src="images/arrow.gif" /><img
                  src="images/arrow.gif" />&nbsp;&nbsp;New
-                products&nbsp;
+                products for {$smarty.now|date_format:"%B"}
               </td>
             </tr>
           </table>
@@ -45,13 +45,10 @@
                 class="NewProduct" id="product3">
                   <tr align="center">
                     <td>
-                      <a href="{saurl page=product productId=$product.products_id}"><img
-                      src="{sabasehref}images/{$product.products_image}"
-                       class="productimagelink" /></a>
-
+                      <img src="{sabasehref}images/{$product.products_image}" class="productimagelink" />
                     </td>
                     <td>
-                      <a href=""
+                      <a href="{saurl page=product pId=$product.products_id}"
                       class="linkmain">{$product.products_name}</a><br >
 
                        {sacurrency amount=$product.products_price}<br >

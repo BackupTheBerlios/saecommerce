@@ -141,7 +141,7 @@
                           <td>
                             <table width="100%" bgcolor="#DDD7C9"
                             style="border: 1px solid gray;border-collapse:collapse">
-                            <?php
+                            <?php						
                             	$this->boxCategories($this->tree->getFirstRoot());
                            	?>
                             </table>
@@ -186,30 +186,26 @@
             </tr>
             <!-- footer -->
             <tr>
-              <td valign="bottom">
-                <table width="100%" class="main" height="20"
-                cellpadding="0" cellspacing="0"
-                style="border-top: 1px solid black; border-bottom: 1px solid black">
-                  <tr>
-                    <td width="20%" align="center">
-                      <a href="<?= SAUrl::baseHref() ?>" class="linkbottom">Home</a>
-                    </td>
-                    <td width="20%" align="center">
-                      <a href="<?= SAUrl::Url('contact') ?>" class="linkbottom">Contact us</a>
-                    </td>
-                    <td width="20%" align="center">
-                      <a href="<?= SAUrl::Url('cart') ?>" class="linkbottom">Shopping
-                      Cart</a>
-                    </td>
-                    <td width="20%" align="center">
-                      <a href="<?= SAUrl::Url('checkout') ?>" class="linkbottom">Checkout</a>
-                    </td>
-                    <td width="20%" align="center">
-                      <a href="<?= SAUrl::Url('account') ?>" class="linkbottom">Members</a>
-                    </td>
-                  </tr>
-                </table>
-              </td>
+			<td colspan="3">
+				<table width="100%" class="main" height="50" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="197"><img src="images/bottom2.gif"></td>
+						<td class="tdbottomrepeat">
+							<table width="100%">
+								<tr>
+									<td width="20%" align="center"><a href="<?= SAUrl::baseHref() ?>" class="linkbottom">Home</a></td>
+									<td width="20%" align="center"><a href="<?= SAUrl::Url('contact') ?>" class="linkbottom">Contact us</a></td>
+	
+									<td width="20%" align="center"><a href="<?= SAUrl::Url('cart') ?>" class="linkbottom">Shopping Cart</a></td>
+									<td width="20%" align="center"><a href="<?= SAUrl::Url('checkout') ?>" class="linkbottom">Checkout</a></td>
+									<td width="20%" align="center"><a href="<?= SAUrl::Url('account') ?>" class="linkbottom">Members</a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+	
+				</table>
+			</td>
             </tr>
             <tr>
               <td valign="bottom" height="10">

@@ -1,5 +1,5 @@
 <?php
-/* $Id: SAEPage.php,v 1.5 2007/04/10 16:56:30 trinculescu Exp $ */
+/* $Id: SAEPage.php,v 1.6 2007/04/11 14:38:40 trinculescu Exp $ */
 
 class SAEPage extends SAPage {
 	protected $content_type = 'text/html; charset=ISO-8859-1';
@@ -20,6 +20,20 @@ class SAEPage extends SAPage {
 		);
 		$this->tree = Tree::setupMemory('DBsimple', DSN, $options);
 		$this->tree->setup();
+		$this->assign_by_ref('categoryTree', $this->tree);
+		
+    	$this->cPath = array();
+    	if ($cPath = $this->app->GP('cPath')) { 
+       		$this->cPath = explode('_', $cPath);
+    	} elseif ($productId = $this->app->GP('pId')) {
+    		$prodToCat = DB_DataObject::factory('products_to_categories');
+    		$prodToCat->get($productId);
+			$path = $this->tree->getPath($prodToCat->categories_id);									
+			foreach($path as $idx => $cat) {
+				$this->cPath = $cat['id'];
+			}
+    	}
+    	$this->currentCategory = $this->cPath[count($this->cPath) - 1]; 
 	}	
 	
 	public function doChangeLanguage() {
@@ -149,28 +163,58 @@ class SAEPage extends SAPage {
 		$this->setContents('LANGUAGES', Smarty::fetch('boxes/languages.tpl'));
 	}
 	
+	protected function boxNewProducts() {
+		$product = DB_DataObject::factory('products');
+		$productDescription = DB_DataObject::factory('products_description');
+		$productDescription->language_id = $_COOKIE['language'];
+		$product->orderBy('products_date_added');
+		$product->limit(0, 4);
+		$product->joinAdd($productDescription);
+		$product->find();
+		while ($product->fetch()) {
+			$products[] = $product->toArray();
+		}
+		$this->assign('products', $products);
+		$this->setContents('MIDDLE_BOX', Smarty::fetch('boxes/new_products.tpl'));
+	}	
+	
    	protected function boxCategories($node) {
-   		$aCPath = explode('_', $this->app->GP('cPath'));
+   		$aCPath = $this->cPath;
         do {
         	$cat = DB_DataObject::factory('categories_description');
         	$cat->language_id = $_COOKIE['language'];
-        	$cat->get($node['id']);
+        	$cat->get($id = $node['id']);
         	$cPath = $this->getCategoryPath($node);
+        	$products_in_category = 0;
+			$this->productsInCategory($id, $products_in_category);
         ?>
           <tr>
             <td>
               &nbsp;
             </td>
             <td class="box" onmouseover="this.style.backgroundColor = 'white'" onmouseout="this.style.backgroundColor = '#DDD7C9'">
-				<a href="<?= SAUrl::Url('default', array('cPath' => $cPath)) ?>"><div><?= str_repeat('&nbsp;&nbsp;', $node['level'])?><img src="images/arrow.gif" border="0"/>&nbsp;<?= ($node['id'] == $aCPath[$node['level']]) ? '<b>' : '' ?><?= $cat->categories_name ?></div></a>
+				<a href="<?= SAUrl::Url('default', array('cPath' => $cPath)) ?>"><div><?= str_repeat('&nbsp;&nbsp;', $node['level'])?><img src="images/arrow.gif" border="0"/>&nbsp;<?= ($node['id'] == $aCPath[$node['level']]) ? '<b>' : '' ?><?= $cat->categories_name . (($products_in_category) ? "&nbsp;($products_in_category)" : '') ?></div></a>
             </td>
           </tr>	                              
           <?php
           	if (($this->tree->hasChildren($node['id'])) && ($node['id'] == $aCPath[$node['level']])) {
-          		$this->boxCategories($this->tree->getChild($node['id']));
+          		$this->boxCategories($this->tree->getChild($node['id']), $aCPath);
           	}
         }
 		while ($node = $this->tree->getNext($node['id']));
+   	}
+   	
+   	protected function productsInCategory($id, &$products_in_category) {
+		$product = DB_DataObject::factory('products'); 
+		$prodToCat = DB_DataObject::factory('products_to_categories');
+		$prodToCat->categories_id = $id;
+		$product->joinAdd($prodToCat);
+		$numberOfProducts = $product->find();
+		$products_in_category += $numberOfProducts;
+		$ids = $this->tree->getChildrenIds($id);
+		foreach($ids as $id) {
+			$this->productsInCategory($id, $products_in_category);
+		}
    	}
    	
    	protected function getCategoryPath($node) {

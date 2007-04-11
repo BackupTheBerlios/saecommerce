@@ -26,7 +26,7 @@
             <tr>
               <td>
               	{foreach name="best_sellers" from=$products item=product}
-                	<a href="" class="linksubmain">{$smarty.foreach.best_sellers.iteration}.&nbsp;{$product._products_id.products_name}</a>
+                	<a href="{saurl page=product pId=$product.products_id}" class="linksubmain">{$smarty.foreach.best_sellers.iteration}.&nbsp;{$product._products_id.products_name}</a>
                 	<br/>
 				{/foreach}
               </td>

@@ -25,7 +25,7 @@
           <img
           src="{sabasehref}images/{$product.products_image}" /><br >
 
-           {$product._products_id.products_name}<br >
+           <a href="{saurl page=product pId=$product.products_id}">{$product._products_id.products_name}</a><br >
            {sacurrency amount=$product.products_price}
         </td>
       </tr>

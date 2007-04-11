@@ -12,7 +12,7 @@
 | Authors: Andi Trînculescu <andi@skyweb.ro>                            |
 +-----------------------------------------------------------------------+
 
-$Id: SApplication.php,v 1.5 2007/04/10 17:19:25 trinculescu Exp $
+$Id: SApplication.php,v 1.6 2007/04/11 14:38:40 trinculescu Exp $
 */
 
 /*! \brief This is the application controller.
@@ -87,19 +87,6 @@ abstract class SApplication {
 
 		session_name(SAE_SESSION_NAME);
 		session_start();
-
-		/*
-		try {
-			SARequest::checkValidity();
-		} catch (URLManipulationException $e) {
-			SALog::log($e->getMessage(), SA_LOG_ERROR);
-			$this->forward($this->errorPageName);
-		} catch (Exception $e) {
-			$this->resign($e->getMessage(), 1);
-		}
-		unset($_GET['chk']);
-		unset($_REQUEST['chk']);
-		*/
 
 		SALog::log("application initialized successfully", SA_LOG_NOTICE);
 	}
